@@ -1,13 +1,13 @@
 <?php
 /*
 Plugin Name: Native PHP Sessions for WordPress
-Version: 0.6.0
+Version: 0.6.1
 Description: Offload PHP's native sessions to your database for multi-server compatibility.
 Author: Pantheon
 Author URI: https://www.pantheon.io/
-Plugin URI: https://wordpress.org/plugins/wp-native-php-sessions/
 Text Domain: pantheon-sessions
 Domain Path: /languages
+Modified by inwendo 16.12.2016
 */
 
 class Pantheon_Sessions {
@@ -102,7 +102,7 @@ class Pantheon_Sessions {
 		// must use different session identifiers for HTTPS and HTTP to prevent a
 		// cookie collision.
 		if ( is_ssl() ) {
-			ini_set( 'session.cookie_secure', TRUE );
+			//ini_set( 'session.cookie_secure', TRUE );
 		}
 		$prefix = ini_get( 'session.cookie_secure' ) ? 'SSESS' : 'SESS';
 
