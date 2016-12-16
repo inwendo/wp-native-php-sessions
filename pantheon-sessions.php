@@ -104,7 +104,8 @@ class Pantheon_Sessions {
 		if ( is_ssl() ) {
 			//ini_set( 'session.cookie_secure', TRUE );
 		}
-		$prefix = ini_get( 'session.cookie_secure' ) ? 'SSESS' : 'SESS';
+		//$prefix = ini_get( 'session.cookie_secure' ) ? 'SSESS' : 'SESS';
+		$prefix = 'SESS';
 
 		session_name( $prefix . substr( hash( 'sha256', $session_name ), 0, 32 ) );
 
